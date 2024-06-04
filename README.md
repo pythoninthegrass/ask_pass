@@ -1,6 +1,6 @@
 # ask_pass
 
-Bespoke askpass script for macOS.
+Bespoke [askpass](https://apple.stackexchange.com/questions/23494/what-option-should-i-give-the-sudo-command-to-have-the-password-asked-through-a) script for macOS.
 
 ## Installation
 
