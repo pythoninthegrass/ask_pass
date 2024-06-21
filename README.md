@@ -9,7 +9,7 @@ Moved to a [proper repo](https://github.com/pythoninthegrass/ask_pass) as gists 
 ## Installation
 
 ```bash
-git clone git@gist.github.com:90080bb15938b899bbc10ae83315ed67.git ask_pass
+git clone https://github.com/pythoninthegrass/ask_pass.git
 ln -s $(pwd)/ask_pass.sh ~/.local/bin/askpass
 ```
 
