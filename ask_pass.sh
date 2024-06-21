@@ -2,9 +2,6 @@
 
 # shellcheck disable=SC2317
 
-# SOURCES
-# https://superuser.com/questions/393506/can-i-automatically-login-to-ssh-using-passwords-from-os-x-keychain
-
 # show description
 help() {
 	cat <<- DESCRIPTION >&2

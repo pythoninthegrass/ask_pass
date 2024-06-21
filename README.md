@@ -1,11 +1,15 @@
 # ask_pass
 
-Bespoke [askpass](https://apple.stackexchange.com/questions/23494/what-option-should-i-give-the-sudo-command-to-have-the-password-asked-through-a) script for macOS.
+Bespoke askpass script for macOS.
+
+## NOTE
+
+Moved to a [proper repo](https://github.com/pythoninthegrass/ask_pass) as gists are pretty limited for organization.
 
 ## Installation
 
 ```bash
-git clone https://github.com/pythoninthegrass/ask_pass.git
+git clone git@gist.github.com:90080bb15938b899bbc10ae83315ed67.git ask_pass
 ln -s $(pwd)/ask_pass.sh ~/.local/bin/askpass
 ```
 
@@ -42,6 +46,7 @@ NOTES
 
 ## Use with Ansible
 
+### Decrypt vault
 ```bash
 # create
 ansible-vault create vault.yml
@@ -55,3 +60,18 @@ export ANSIBLE_VAULT_PASSWORD_FILE=$(which askpass)
 $ ansible-vault view vault.yml
 Secret meeting in the basement of my brain
 ```
+
+### Become password
+```bash
+# become password
+export ASKPASS_SERVICE_NAME='ansible-sudo'
+askpass -s
+
+# use become password from keychain
+export ANSIBLE_BECOME_PASS=$(askpass)
+ansible-playbook -i hosts tasks/pkg.yml -b
+```
+
+## Further Reading
+* [Using Mac keychain to store and retrieve Ansible vault passwords · sandipb.net](https://blog.sandipb.net/2021/09/24/using-mac-keychain-to-store-and-retrieve-ansible-vault-passwords/)
+* [macos - Can I automatically login to ssh using passwords from OS X keychain? - Super User](https://superuser.com/questions/393506/can-i-automatically-login-to-ssh-using-passwords-from-os-x-keychain)
