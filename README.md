@@ -48,12 +48,12 @@ NOTES
 
 ### Decrypt vault
 ```bash
-# create
-ansible-vault create vault.yml
-
 # create a custom service name password
 export ASKPASS_SERVICE_NAME='vault-pass'
 askpass -s
+
+# create
+ansible-vault create vault.yml
 
 # print
 export ANSIBLE_VAULT_PASSWORD_FILE=$(which askpass)
