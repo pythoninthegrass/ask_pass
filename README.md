@@ -57,8 +57,11 @@ askpass -v      # get vault password
 ansible-vault create vault.yml
 
 # print
-export ANSIBLE_VAULT_PASSWORD_FILE=$(which askpass)
-$ ansible-vault view vault.yml
+# ! Note: has to be declared as an _inline_ environment variable
+# ! with the process substitution syntax '<(cmd)' to work correctly.
+# ! Otherwise, ansible thinks that it's a literal absolute filepath with the
+# ! credentials appended to the end.
+ANSIBLE_VAULT_PASSWORD_FILE=<(askpass --vault) ansible-vault view vault.yml
 Secret meeting in the basement of my brain
 ```
 
