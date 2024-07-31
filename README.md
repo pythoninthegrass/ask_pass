@@ -68,7 +68,7 @@ export ASKPASS_SERVICE_NAME='ansible-sudo'
 askpass -s
 
 # use become password from keychain
-export ANSIBLE_BECOME_PASS=$(askpass)
+export ANSIBLE_BECOME_PASS=$(which askpass)
 ansible-playbook -i hosts tasks/pkg.yml -b
 ```
 
