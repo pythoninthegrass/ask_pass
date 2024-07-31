@@ -50,7 +50,8 @@ NOTES
 ```bash
 # create a custom service name password
 export ASKPASS_SERVICE_NAME='vault-pass'
-askpass -s
+askpass -v -s   # set vault password
+askpass -v      # get vault password
 
 # create
 ansible-vault create vault.yml
@@ -65,7 +66,8 @@ Secret meeting in the basement of my brain
 ```bash
 # become password
 export ASKPASS_SERVICE_NAME='ansible-sudo'
-askpass -s
+askpass --sudo -s   # set sudo password
+askpass --sudo      # get sudo password
 
 # use become password from keychain
 export ANSIBLE_BECOME_PASS=$(which askpass)
