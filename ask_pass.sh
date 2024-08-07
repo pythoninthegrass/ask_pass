@@ -50,6 +50,8 @@ help() {
 # read env var for service name
 service_name="${ASKPASS_SERVICE_NAME:-ssh-ask-pass}"
 
+# TODO: creates an identical keychain instead of replacing it
+# * via `askpass -s`
 # set password in keychain
 set_password() {
     local max_attempts=3
