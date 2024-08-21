@@ -77,6 +77,11 @@ export ANSIBLE_BECOME_PASS=$(which askpass)
 ansible-playbook -i hosts tasks/pkg.yml -b
 ```
 
+## TODO
+
+* Error handling for when keychain isn't unlocked (e.g., `Failed to set password in keychain service: ansible-sudo`)
+  * `security -i unlock-keychain` 
+
 ## Further Reading
 * [Using Mac keychain to store and retrieve Ansible vault passwords · sandipb.net](https://blog.sandipb.net/2021/09/24/using-mac-keychain-to-store-and-retrieve-ansible-vault-passwords/)
 * [macos - Can I automatically login to ssh using passwords from OS X keychain? - Super User](https://superuser.com/questions/393506/can-i-automatically-login-to-ssh-using-passwords-from-os-x-keychain)
